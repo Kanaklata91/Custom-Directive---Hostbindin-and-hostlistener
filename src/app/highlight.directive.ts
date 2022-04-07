@@ -12,12 +12,14 @@ import {
 export class HighlightClass {
   constructor(private el: ElementRef) {}
 
-  @HostListener('mouseenter') onMouseEnter() {
+  @HostBinding('style.backgroundColor') color = 'blue';
+
+  @HostListener('mouseenter') onMouseEnter1() {
     this.highlight('yellow');
   }
 
-  @HostListener('mouseleave') onMouseLeave() {
-    this.highlight('');
+  @HostListener('mouseleave') onMouseLeave1() {
+    this.highlight('red');
   }
 
   private highlight(color: string) {
